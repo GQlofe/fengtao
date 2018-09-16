@@ -1,0 +1,11 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: user-center-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8181/eureka/
