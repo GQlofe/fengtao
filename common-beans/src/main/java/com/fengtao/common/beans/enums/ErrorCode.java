@@ -11,7 +11,13 @@ public enum ErrorCode {
     SUCCESS(0, "成功"),
 
     // 用户中心服务：10, 登录模块：01
-    USER_NAME_PW_ERROR(10010001, "用户名或密码错误"),
+    ACCOUNT_PWD_ERROR(10010001, "用户名或密码错误"),
+    ACCOUNT_ERROR(10010002, "账号不符合规范"),
+    PWD_ERROR(10010003, "密码不符合规范"),
+
+    SIGN_UP_FAILED(10010004,"注册失败"),
+    ACCOUNT_EXIST(10010005,"该账号已被注册"),
+
 
 
     SYSTEM_ERROR(99_99_9999, "系统错误");

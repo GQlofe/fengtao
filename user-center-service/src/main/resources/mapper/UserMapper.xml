@@ -21,9 +21,71 @@
 
     <select id="queryByAccount" parameterType="java.lang.String" resultMap="userResultMap">
         select
-        <include refid="allColumn"></include>
+        <include refid="allColumn"/>
         from
-        <include refid="tableName"></include>
+        <include refid="tableName"/>
         where account=#{account}
     </select>
+
+    <insert id="insert" parameterType="com.fengtao.common.beans.entity.usercenter.UserDo" keyProperty="id" useGeneratedKeys="true">
+        insert into <include refid="tableName"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                account,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="nickName != null">
+                nick_name,
+            </if>
+            <if test="encryPwd != null">
+                encry_pwd,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="iconUrl != null">
+                icon_url,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="account != null">
+                #{account},
+            </if>
+            <if test="password != null">
+                #{password},
+            </if>
+            <if test="nickName != null">
+                #{nickName},
+            </if>
+            <if test="encryPwd != null">
+                #{encryPwd},
+            </if>
+            <if test="phone != null">
+                #{phone},
+            </if>
+            <if test="email != null">
+                #{email},
+            </if>
+            <if test="iconUrl != null">
+                #{iconUrl},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime},
+            </if>
+        </trim>
+    </insert>
 </mapper>

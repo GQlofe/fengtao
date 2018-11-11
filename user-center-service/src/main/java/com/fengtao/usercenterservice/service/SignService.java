@@ -3,6 +3,7 @@ package com.fengtao.usercenterservice.service;
 import com.fengtao.common.beans.dto.SignInDto;
 import com.fengtao.common.beans.entity.usercenter.UserDo;
 import com.fengtao.common.beans.exceptions.SystemException;
+import com.fengtao.common.beans.view.vo.UserVo;
 
 /**
  * 功能描述：
@@ -22,7 +23,19 @@ public interface SignService {
      * @auther: GQlofe
      * @date: 2018/9/16 14:53
      */
-    String signIn(SignInDto signInDto) throws SystemException;
+    String signIn(UserVo userVo) throws SystemException;
+
+    /**
+     *
+     * 功能描述: 注册
+     *
+     * @param: signInDto 注册信息
+     * @return: token
+     * @exception SystemException
+     * @auther: GQlofe
+     * @date: 2018/9/16 14:53
+     */
+    String signUp(UserVo userVo) throws SystemException;
 
     /**
      *

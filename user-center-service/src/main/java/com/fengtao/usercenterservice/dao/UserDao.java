@@ -13,4 +13,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserDao {
 
     UserDo queryByAccount(String account);
+
+    int insert(UserDo userDo);
 }
